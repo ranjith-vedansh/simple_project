@@ -17,28 +17,19 @@ jobs:
     - name: Install build tools
       run: sudo apt-get update && sudo apt-get install -y build-essential
       
-    - name: make
+    - name: Run build command
       run: make
       
-    - name: make check
+    - name: Check Executable File Creation
       run: |
-        echo "Below are the list of files in $(pwd)"
-        ls -lrt
+        echo "Below are the list of files in $(pwd)" >> $GITHUB_STEP_SUMMARY
+        ls -lrt >> $GITHUB_STEP_SUMMARY
+        echo " " >> $GITHUB_STEP_SUMMARY
+        echo "Below is the artifact that just built with $GITHUB_RUN_NUMBER Trigger" >> $GITHUB_STEP_SUMMARY
+        ls | grep '.exe' >> $GITHUB_STEP_SUMMARY || true
+
+    # - name: Upload a Build Artifact
         # scp cal.exe <IP>:/home/ubuntu/
         # ssh <IP> cd /home/ubuntu
         # ./cal.exe
-        
-    # - name: Upload a Build Artifact
-    #   uses: actions/upload-artifact@v4.6.2
-    #   with:
-    #     # Artifact name
-    #     name: cal.exe
-    #     # A file, directory or wildcard pattern that describes what to upload
-    #     path: $(pwd)
-    #     # The desired behavior if no files are found using the provided path.
-   
-    
-        include-hidden-files: # optional, default is false
-
-
-
+      
