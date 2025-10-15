@@ -1,5 +1,0 @@
-cal.exe: add.c subtract.c multiply.c divide.c
-	g++ add.c subtract.c multiply.c divide.c -o cal.exe
-
-clean:
-	rm -f cal.exe
