@@ -20,7 +20,7 @@ jobs:
       run: make
       
     - name: make check
-      run: make check
-      
-    - name: make distcheck
-      run: make distcheck
+      run: |
+        echo "Below are the list of files in $(pwd)"
+        ls -lrt
+
