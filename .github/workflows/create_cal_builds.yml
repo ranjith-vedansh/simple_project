@@ -22,8 +22,11 @@ jobs:
 
     - name: Check Executable and Update GitHub Summary
       run: |
+        echo "**----------------------------------------------------------------------**" >> $GITHUB_STEP_SUMMARY
         echo "**Below are the list of files in $(pwd)**" >> $GITHUB_STEP_SUMMARY
         ls -lrt >> $GITHUB_STEP_SUMMARY
         echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**----------------------------------------------------------------------**" >> $GITHUB_STEP_SUMMARY
         echo "**Below is the artifact that just built with $GITHUB_RUN_NUMBER Trigger**" >> $GITHUB_STEP_SUMMARY
-        echo "cal.exe" >> $GITHUB_STEP_SUMMARY
+        ls -lrt | grep '.exe' >> $GITHUB_STEP_SUMMARY || true
+        # echo "cal.exe" >> $GITHUB_STEP_SUMMARY
