@@ -23,4 +23,7 @@ jobs:
       run: |
         echo "Below are the list of files in $(pwd)"
         ls -lrt
+        # scp cal.exe <IP>:/home/ubuntu/
+        # ssh <IP> cd /home/ubuntu
+        # ./cal.exe
 
