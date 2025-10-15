@@ -19,17 +19,11 @@ jobs:
       
     - name: Run build command
       run: make
-      
-    - name: Check Executable File Creation
-      run: |
-        echo "Below are the list of files in $(pwd)" >> $GITHUB_STEP_SUMMARY
-        ls -lrt >> $GITHUB_STEP_SUMMARY
-        echo " " >> $GITHUB_STEP_SUMMARY
-        echo "Below is the artifact that just built with $GITHUB_RUN_NUMBER Trigger" >> $GITHUB_STEP_SUMMARY
-        ls | grep '.exe' >> $GITHUB_STEP_SUMMARY || true
 
-    # - name: Upload a Build Artifact
-        # scp cal.exe <IP>:/home/ubuntu/
-        # ssh <IP> cd /home/ubuntu
-        # ./cal.exe
-      
+    - name: Check Executable and Update GitHub Summary
+      run: |
+        echo "**Below are the list of files in $(pwd)**" >> $GITHUB_STEP_SUMMARY
+        ls -lrt >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "**Below is the artifact that just built with $GITHUB_RUN_NUMBER Trigger**" >> $GITHUB_STEP_SUMMARY
+        echo "cal.exe" >> $GITHUB_STEP_SUMMARY
