@@ -15,3 +15,12 @@ feature          ------>
 bugfix           ------>
 issue            ------>
 hotfix           ------>
+
+
+| Build Tool | Technology / Language | Executable / Output                                            |
+| ---------- | --------------------- | -------------------------------------------------------------- |
+| **make**   | C & C++               | `target.exe` (or other binary on Unix/Linux, e.g., `a.out`)    |
+| **Ant**    | Java                  | `.class` files, `.jar` archives                                |
+| **Maven**  | Java                  | `.jar`, `.war`, `.ear` archives                                |
+| **Gradle** | Java, Kotlin, Android | `.jar`, `.war`, `.apk` (for Android), or other build artifacts |
+
