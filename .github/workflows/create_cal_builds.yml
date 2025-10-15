@@ -1,4 +1,5 @@
-name: Create C/C++ Artifacts
+# Create executables/builds/artifacts for C & C++ code
+name: Create executables for C & C++ code
 
 on:
   push:
