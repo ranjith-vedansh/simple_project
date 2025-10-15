@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: Create C/C++ Artifacts
 
 on:
   push:
