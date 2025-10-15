@@ -1,26 +1,32 @@
 # simple_project
-Explain Branching strategy 
 
 This repository demonstrates the complete process of how source code moves from a developer’s local environment (server/laptop) to a Source Code Management (SCM) tool, and how it is periodically released to production.
 
-## primary branches:##
-production        -----> End user environment (LIVE env)                     # This is the final and END user code for the application
-main              -----> Per-production/Disaster Recovery (DR) env           # This is the env, i would use as a production backup env/server
-Stagging          -----> CAT/UAT env                                         # This env is used to showcase the developmet activity/functionality to the customer/App owner
-develop           -----> Testing/QA env                                      # This is the env, where the source code will get deployed for the first time for QA/Validation of functionalities/ performance of the application.
+## Branching Strategy
 
-## supporting branches: ##
+### Primary Branches
 
-feature          ------>
-bugfix           ------>
-issue            ------>
-hotfix           ------>
+| Branch     | Environment / Purpose                                                                 |
+| ---------- | ----------------------------------------------------------------------------------- |
+| **production** | End user environment (LIVE) — final code deployed to end users                    |
+| **main**       | Pre-production / Disaster Recovery (DR) environment — acts as a backup for production |
+| **stagging**   | CAT / UAT environment — showcases development features to the customer / app owner |
+| **develop**    | Testing / QA environment — first deployment for QA validation of functionality and performance |
 
+### Supporting Branches
+
+| Branch   | Purpose                                      |
+| -------- | -------------------------------------------- |
+| **feature** | New feature development                    |
+| **bugfix**  | Fixing reported bugs                        |
+| **issue**   | Tracking issues or tasks                    |
+| **hotfix**  | Quick fixes for production-critical issues |
+
+## Build Tools for Different Technologies / Source Code
 
 | Build Tool | Technology / Language | Executable / Output                                            |
-| ---------- | --------------------- | -------------------------------------------------------------- |
-| **make**   | C & C++               | `target.exe` (or other binary on Unix/Linux, e.g., `a.out`)    |
-| **Ant**    | Java                  | `.class` files, `.jar` archives                                |
-| **Maven**  | Java                  | `.jar`, `.war`, `.ear` archives                                |
+| ---------- | ------------------- | -------------------------------------------------------------- |
+| **make**   | C & C++             | `target.exe` (or other binary on Unix/Linux, e.g., `a.out`)    |
+| **Ant**    | Java                | `.class` files, `.jar` archives                                |
+| **Maven**  | Java                | `.jar`, `.war`, `.ear` archives                                |
 | **Gradle** | Java, Kotlin, Android | `.jar`, `.war`, `.apk` (for Android), or other build artifacts |
-
