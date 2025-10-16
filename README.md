@@ -24,9 +24,10 @@ This repository demonstrates the complete process of how source code moves from 
 
 ## Build Tools for Different Technologies / Source Code
 
-| Build Tool | Technology / Language | Executable / Output                                            |
-| ---------- | ------------------- | -------------------------------------------------------------- |
-| **make**   | C & C++             | `target.exe` (or other binary on Unix/Linux, e.g., `a.out`)    |
-| **Ant**    | Java                | `.class` files, `.jar` archives                                |
-| **Maven**  | Java                | `.jar`, `.war`, `.ear` archives                                |
-| **Gradle** | Java, Kotlin, Android | `.jar`, `.war`, `.apk` (for Android), or other build artifacts |
+| Build Tool | Technology / Language | Executable / Output                                      | Compiler Used                                         |
+| ---------- | --------------------- | -------------------------------------------------------- | ----------------------------------------------------- |
+| **make**   | C & C++               | target.exe (or other binary on Unix/Linux, e.g., a.out)  | **gcc / g++**                                         |
+| **Ant**    | Java                  | .class files, .jar archives                              | **javac (Java Compiler)**                             |
+| **Maven**  | Java                  | .jar, .war, .ear archives                                | **javac (Java Compiler)**                             |
+| **Gradle** | Java, Kotlin, Android | .jar, .war, .apk (for Android), or other build artifacts | **javac (Java), kotlinc (Kotlin), Android SDK tools** |
+
